@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohamed Said | 0xS3id0x Portfolio</title>
+<meta name="description" content="Mohamed Said (0xS3id0x) — cybersecurity student, CTF player, HTB writeups.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23060a08'/%3E%3Ctext x='9' y='45' font-family='monospace' font-size='32' fill='%233dffa0'%3E%3E_%3C/text%3E%3C/svg%3E">
+<script>
+/* apply saved theme before first paint (no flash) — keep this inline */
+try{document.documentElement.dataset.theme=localStorage.getItem('0x-theme')||'dark'}catch(e){}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=VT323&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="gridbg"></div>
+<div class="scanlines"></div>
+<div id="pbar"></div>
+<div id="cdot"></div><div id="cring"></div>
+
+<nav>
+  <a class="logo" href="#top">0xS3id0x@portfolio:<b>~$</b></a>
+  <div class="nlinks">
+    <a href="#about" data-sec="about">./about</a>
+    <a href="#skills" data-sec="skills">./skills</a>
+    <a href="#projects" data-sec="projects">./projects</a>
+    <a href="#certs" data-sec="certs">./certs</a>
+    <a href="#writeups" data-sec="writeups">./writeups</a>
+    <a href="#contact" data-sec="contact">./contact</a>
+  </div>
+  <button class="nbtn" id="ghBtn" title="GitHub" aria-label="GitHub profile"><i data-lucide="github"></i></button>
+  <button class="nbtn" id="themeBtn" title="toggle theme" aria-label="toggle theme">
+    <i data-lucide="moon" class="i-moon"></i><i data-lucide="sun" class="i-sun"></i>
+  </button>
+  <button class="nbtn" id="burger" aria-label="menu"><i data-lucide="menu"></i></button>
+</nav>
+
+<div id="mmenu">
+  <button class="nbtn" id="mclose" aria-label="close"><i data-lucide="x"></i></button>
+  <a href="#about"><span>01</span>about</a>
+  <a href="#skills"><span>02</span>skills</a>
+  <a href="#projects"><span>03</span>projects</a>
+  <a href="#certs"><span>04</span>certs</a>
+  <a href="#writeups"><span>05</span>writeups</a>
+  <a href="#contact"><span>06</span>contact</a>
+</div>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <canvas id="rain"></canvas>
+  <div class="terminal">
+    <div class="tbar">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <div class="tbar-title">0xs3id0x@kali: ~ — try typing <b>help</b></div>
+    </div>
+    <div class="tbody" id="tbody">
+      <div id="tout"></div>
+      <div class="inputline" id="iline">
+        <span class="p-user">0xS3id0x@kali</span><span class="p-dim">:~$</span>
+        <span id="tmirror" class="tmirror"></span><span class="caret"></span>
+        <input id="cmd" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="terminal input">
+      </div>
+    </div>
+  </div>
+  <div class="hero-hint">
+    <div class="chips">
+      <button class="chip" data-cmd="whoami">whoami</button>
+      <button class="chip" data-cmd="skills">skills</button>
+      <button class="chip" data-cmd="projects">projects</button>
+      <button class="chip" data-cmd="certs">certs</button>
+      <button class="chip" data-cmd="contact">contact</button>
+      <button class="chip" data-cmd="flag">flag</button>
+    </div>
+  </div>
+  <div class="cue"><i data-lucide="chevron-down"></i></div>
+</header>
+
+<main>
+<!-- ================= ABOUT — one big box ================= -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="sec-idx">// 01 · IDENTITY</div>
+      <h2 class="glitch" data-text="ABOUT ME">ABOUT ME</h2>
+      <p class="sec-sub">$ cat ~/about.txt</p>
+    </div>
+    <div class="card about-card rv" data-tilt="soft">
+      <div class="id-top">
+        <div>
+          <h3>Mohamed Said</h3>
+          <div class="dim">0xS3id0x </div>
+        </div>
+      </div>
+      <dl class="idlist">
+        <div><dt>ROLE</dt><dd>Penetration Tester  · Bug Bounty Hunter</dd></div>
+        <div><dt>FOCUS</dt><dd>Bug Bounty Hunting · Web Application Security ·Mobile Application Security </dd></div>
+        <div><dt>PLATFORMS</dt><dd>HTB · Intigriti · YesWeHack · HackerOne</dd></div>
+      </dl>
+      <div class="id-div"></div>
+      <div class="bio">
+      <p id="skills1"> Bug bounty hunter and security researcher, I hunt on <span class="t-ok">HackerOne, YesWeHack and Intigriti,</span> with a focus on web application security.
+        I like digging into how an app really works, mapping the attack surface with recon and testing it in <span class="t-ok">Burp Suite</span>, to find what automated scanners miss.
+        I also build small tools that speed up that workflow
+      </p>
+
+<p id="skills"> I am building my skills through <span class="t-ok">HTB</span> Machines and I document what I learn through write-ups on Medium and my HTB machines blog.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="sec-idx">// 02 · PLAYBOOK</div>
+      <h2 class="glitch" data-text="SKILLS">SKILLS</h2>
+      <p class="sec-sub">$ ls -la ~/skills  — 5 categories open</p>
+    </div>
+    <div class="grid sk">
+      <div class="card rv" data-tilt><h3>💻 Programming Languages</h3><span class="tag">Python</span><span class="tag">Bash</span><span class="tag">JavaScript</span><span class="tag">HTML</span><span class="tag">CSS</span></div>
+      <div class="card rv" data-tilt><h3>🔧 Pentesting Tools</h3><span class="tag">Burp Suite</span><span class="tag">Nmap</span><span class="tag">Metasploit</span><span class="tag">Wireshark</span><span class="tag">ffuf</span><span class="tag">sqlmap</span></span><span class="tag">dirsearch</span></span><span class="tag">subfinder</span></div>
+      <div class="card rv" data-tilt><h3>🛡️ Security Domains</h3><span class="tag">Web App Security</span><span class="tag">Ethical Hacking</span><span class="tag">Vulnerability Assessment</span><span class="tag">OWASP Top 10</span><span class="tag">Network Pentesting</span><span class="tag">API TOP 10</span><span class="tag">Mobile Application Security</span></div>
+      <div class="card rv" data-tilt><h3>🖥️ Operating Systems</h3><span class="tag">Kali Linux</span><span class="tag">Windows</span></div>
+      <div class="card rv" data-tilt><h3>🏆 Platforms </h3><span class="tag">Hack The Box</span><span class="tag">intigriti</span><span class="tag">YesWeHack</span><span class="tag">HackerOne</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="sec-idx">// 03 · ARSENAL</div>
+      <h2 class="glitch" data-text="PROJECTS">PROJECTS</h2>
+      <p class="sec-sub">$ ls -la ~/repos — pinned builds · full list on github</p>
+    </div>
+      <div class="card rv" data-tilt>
+        <div class="p-top"><i data-lucide="folder-git-2" class="p-ic"></i><h3>0xS3id0x-Manual-Testing-Checklist</h3></div>
+        <p class="p-desc">Interactive web app for bug bounty hunters & pentesters , Auth flows, XSS, SSRF, logic bugs, recon & more  </p>
+        <p class="p-desc">This checklist is built to be fast, practical, and distraction-free during real bug bounty sessions. It is designed to support your workflow. </p>
+        <div><span class="tag">JavaScript</span><span class="tag">HTML</span><span class="tag">CSS</span></div>
+        <a class="go" href="https://github.com/0xS3id0x/0xS3id0x-Manual-Testing-Checklist" target="_blank" rel="noopener">view repo <i data-lucide="arrow-up-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CERTS ================= -->
+<section id="certs">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="sec-idx">// 04 · CERTIFIED</div>
+      <h2 class="glitch" data-text="CERTS">CERTS</h2>
+      <p class="sec-sub">$ openssl verify -CAfile trust.pem ~/certs/*.crt — 5/5 valid</p>
+    </div>
+    <div class="grid">
+      <div class="card rv" data-tilt>
+        <div class="c-head"><span class="c-idx">01</span><h3>Fetch The Flag CTF 2026</h3><span class="stamp">VERIFIED</span></div>
+        <div class="c-issuer"><i data-lucide="shield-check"></i>Snyk</div>
+        <div class="meta">Issued Feb 2026</div>
+      </div>
+      <div class="card rv" data-tilt>
+        <div class="c-head"><span class="c-idx">02</span><h3>University CTF 2025: Tinsel Trouble</h3><span class="stamp">VERIFIED</span></div>
+        <div class="c-issuer"><i data-lucide="shield-check"></i>Hack The Box</div>
+        <div class="meta">Issued Dec 2025</div>
+      </div>
+      <div class="card rv" data-tilt>
+        <div class="c-head"><span class="c-idx">03</span><h3>Cybersecurity For Beginners</h3><span class="stamp">VERIFIED</span></div>
+        <div class="c-issuer"><i data-lucide="shield-check"></i>Information Technology Institute (ITI)</div>
+        <div class="meta">Issued Nov 2025</div>
+      </div>
+      <div class="card rv" data-tilt>
+        <div class="c-head"><span class="c-idx">04</span><h3>Ethical Hacking</h3><span class="stamp">VERIFIED</span></div>
+        <div class="c-issuer"><i data-lucide="shield-check"></i>Information Technology Institute (ITI)</div>
+        <div class="meta">Issued Oct 2025</div>
+        <div><span class="tag">Ethical Hacking</span><span class="tag">Vuln Assessment</span></div>
+        <div class="cred">credential: <code>7NCR0QyCfH</code><button data-copy="7NCR0QyCfH" aria-label="copy credential id"><i data-lucide="copy"></i></button></div>
+      </div>
+      <div class="card rv" data-tilt>
+        <div class="c-head"><span class="c-idx">05</span><h3>Sprints CyberSecurity Fundamentals</h3><span class="stamp">VERIFIED</span></div>
+        <div class="c-issuer"><i data-lucide="shield-check"></i>Sprints</div>
+        <div class="meta">Issued Sep 2025</div>
+        <div class="cred">credential: <code>SPR-6GVM89</code><button data-copy="SPR-6GVM89" aria-label="copy credential id"><i data-lucide="copy"></i></button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WRITEUPS ================= -->
+<section id="writeups">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="sec-idx">// 05 · FIELD NOTES</div>
+      <h2 class="glitch" data-text="WRITEUPS">WRITEUPS</h2>
+      <p class="sec-sub">$ tail -f ~/writeups.log — htb machines &amp; vulnerabilites found, documented</p>
+    </div>
+    
+    <div class="grid">
+      <div class="card wcard rv" data-tilt>
+        <i data-lucide="newspaper" class="w-ic"></i>
+        <h3>Medium</h3>
+        <p>Articles on web security and documented findings.</p>
+        <a class="go" id="mediumLink" href="https://medium.com/@0xS3id0x" target="_blank" rel="noopener">read on medium <i data-lucide="arrow-up-right"></i></a>
+      </div>
+      <div class="card wcard rv" data-tilt>
+        <i data-lucide="terminal" class="w-ic"></i>
+        <h3>HTB Machines Blog</h3>
+        <p>Step-by-step walkthroughs: recon, foothold, privesc, and takeaways.</p>
+        <a class="go" id="blogLink" href="https://0xS3id0x.github.io" target="_blank" rel="noopener">open blog <i data-lucide="arrow-up-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="sec-idx">// 06 · Contact Details</div>
+      <h2 class="glitch" data-text="CONTACT">CONTACT</h2>
+      <p class="sec-sub">$ ./contact.sh --open-channel</p>
+    </div>
+    <div class="card contact-big rv" data-tilt="soft">
+      <div class="cb-head">
+        <span class="cb-big-ic"><i data-lucide="radio-tower"></i></span>
+        <div>
+          <h3>open a channel</h3>
+          <div class="dim">Feel Free To Contact</div>
+        </div>
+        <span class="cb-status"><span class="st-dot"></span>ONLINE</span>
+      </div>
+      <a class="cb-row" href="https://github.com/0xS3id0x" target="_blank" rel="noopener">
+        <span class="cb-row-ic"><i data-lucide="link"></i></span>
+        <span><b>GitHub</b><span class="c-url">My Projects</span></span>
+        <i data-lucide="arrow-up-right" class="go2"></i>
+      </a>
+      <a class="cb-row" >
+        <span class="cb-row-ic"><i data-lucide="mail"></i></span>
+        <span><b>Email</b><span class="c-url">moahmedsaid19005@gmail.com</span></span>
+        <i data-lucide="arrow-up-right" class="go2"></i>
+      </a>
+      <a class="cb-row" href="https://www.linkedin.com/in/mohamed-said-958b60294/" target="_blank" rel="noopener">
+        <span class="cb-row-ic"><i data-lucide="link"></i></span>
+        <span><b>LinkedIn</b><span class="c-url">Mohamed Said </span></span>
+        <i data-lucide="arrow-up-right" class="go2"></i>
+      </a>
+      <a class="cb-row" >
+        <span class="cb-row-ic"><i data-lucide="Phone"></i></span>
+        <span><b>Phone</b><span class="c-url">+20 109 209 7135</span></span>
+        <i data-lucide="arrow-up-right" class="go2"></i>
+      </a>
+      <a class="cb-row" id="cbMedium" href="https://medium.com/@0xS3id0x" target="_blank" rel="noopener">
+        <span class="cb-row-ic"><i data-lucide="newspaper"></i></span>
+        <span><b>Medium</b><span class="c-url">Bug Bounty Findings Writeups</span></span>
+        <i data-lucide="arrow-up-right" class="go2"></i>
+      </a>
+      <a class="cb-row" id="cbBlog" href="https://0xs3id0x.github.io/" target="_blank" rel="noopener">
+        <span class="cb-row-ic"><i data-lucide="terminal"></i></span>
+        <span><b>My Blog</b><span class="c-url">HTB Machines Walkthroughs</span></span>
+        <i data-lucide="arrow-up-right" class="go2"></i>
+      </a>
+      <div class="cb-foot">$ ping -c 1 0xS3id0x … <span class="t-ok">reply latency: &lt; 24h</span></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p class="f-quote">while (learning) { <span>hack()</span>; }</p>
+  <p id="closure">© 2026 0xS3id0x. All Rights Reserverd </p>
+  <a class="ftop" href="#top">[ back to top ] <i data-lucide="arrow-up"></i></a>
+</footer>
+
+<div id="toast" role="status">
+  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+  <span id="toastMsg"></span>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
