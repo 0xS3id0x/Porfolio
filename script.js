@@ -54,7 +54,6 @@ if(matchMedia('(pointer:fine)').matches && !REDUCED){
   })();
 }
 
-/* ---------- matrix rain (hero only, dark only, SLOW) ---------- */
 const cv=$('#rain'), cx=cv.getContext('2d'), hero=$('.hero');
 const GLYPHS='アカサタナハマヤラワ0123456789ABCDEF<>/{}$#*+=';
 let drops=[], cols=0, mRun=false, mBoost=0, mFrame=0;
@@ -66,8 +65,6 @@ function sizeRain(){
 function mDraw(){
   if(!mRun) return;
   mFrame++;
-  /* advance one step only every M_STEP frames → slow cinematic drip.
-     'matrix' command in the terminal boosts it to full speed for 5s. */
   if(mBoost || mFrame % M_STEP === 0){
     cx.fillStyle='rgba(6,10,8,0.08)'; cx.fillRect(0,0,cv.width,cv.height);
     cx.font='13px "JetBrains Mono",monospace';
@@ -110,7 +107,6 @@ const secIO=new IntersectionObserver(es=>es.forEach(e=>{
 }),{rootMargin:'-45% 0px -50% 0px'});
  $$('main section').forEach(s=>secIO.observe(s));
 
-/* ---------- scroll reveal + grid stagger ---------- */
  $$('.grid').forEach(g=>[...g.children].forEach((c,i)=>{
   if(c.classList.contains('rv')) c.style.setProperty('--rd',(i*70)+'ms');
 }));
@@ -133,16 +129,14 @@ function attachTilt(el){
     el.style.zIndex=8;
   });
   el.addEventListener('mouseleave',()=>{
-    el.classList.remove('tilting');   /* back to the .55s spring transition */
-    el.style.transform='';            /* card glides home instead of snapping */
+    el.classList.remove('tilting');   
+    el.style.transform='';            
     setTimeout(()=>{ if(!el.classList.contains('tilting')) el.style.zIndex=''; },560);
   });
 }
  $$('[data-tilt]').forEach(attachTilt);
 
-/* =========================================================
-   TERMINAL
-========================================================= */
+
 const tbody=$('#tbody'), tout=$('#tout'), cmdIn=$('#cmd'), tmirror=$('#tmirror'), iline=$('#iline');
 let booted=false, skipBoot=false, hist=[], hIdx=0, busy=false;
 
@@ -281,8 +275,7 @@ function exec(raw){
   setTimeout(()=>{ exec(ch.dataset.cmd); if(matchMedia('(pointer:fine)').matches) cmdIn.focus(); },80);
 }));
 
-/* ---------- misc ---------- */
-/* sync contact-box medium/blog hrefs from the writeups anchors (single edit point) */
+
 const _m=$('#mediumLink'), _b=$('#blogLink');
 if(_m && $('#cbMedium')) $('#cbMedium').href=_m.href;
 if(_b && $('#cbBlog'))   $('#cbBlog').href=_b.href;
